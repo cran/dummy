@@ -1,0 +1,16 @@
+Planned changes in next versions:
+
+*Add error handling.
+
+---------------------------------------------------------------
+Change log:
+
+* Version 0.1.2: April 2015
+-Bug fix for data frames with only one character or factor.
+
+* Version 0.1.1: November 2014
+-Bug fix for single columns.
+
+* Version 0.1.0: November 2014
+-Package submitted to CRAN.
+

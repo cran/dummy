@@ -23,7 +23,9 @@
 #' @author Authors: Michel Ballings, and Dirk Van den Poel, Maintainer: \email{Michel.Ballings@@GMail.com}
 categories <- function(x,p="all"){
   categoricals <- which(sapply(x,function(x) is.factor(x) || is.character(x)))
-  x <- data.frame(x[,categoricals])
+
+  x <- x[,categoricals,drop=FALSE]
+
   cats <- sapply(1:ncol(x),function(z) {
     cats <- table(x[,z])
     if(is.numeric(p) && length(p) == 1) {

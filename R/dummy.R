@@ -42,6 +42,7 @@
 #' 
 #' #create all dummies of training data
 #' dummy(x=traindata)
+#' 
 #'
 #' @seealso \code{\link{categories}}
 #' @return  A data frame containing dummy variables
