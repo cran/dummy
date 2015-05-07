@@ -22,6 +22,7 @@
 #' @return  A list containing the variable names and the categories
 #' @author Authors: Michel Ballings, and Dirk Van den Poel, Maintainer: \email{Michel.Ballings@@GMail.com}
 categories <- function(x,p="all"){
+  colnames(x) <- make.names(colnames(x),TRUE)
   categoricals <- which(sapply(x,function(x) is.factor(x) || is.character(x)))
 
   x <- x[,categoricals,drop=FALSE]

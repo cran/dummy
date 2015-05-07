@@ -1,10 +1,10 @@
-f5e91c3a2becf30354502575bf89620c *DESCRIPTION
+995c76e70de5831c3f567b963a3173bc *DESCRIPTION
 8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
-d5eead510670ff00384911466448201c *R/categories.R
-0aceb9daab9eb785828afeebd33fe07c *R/dummy.R
+7f005b82e1f5d9460daea27638ba6755 *R/categories.R
+2d705e678aa3ccf93a2585411c76a93c *R/dummy.R
 88796ae5d91e443154ce600c387e7d4f *R/dummyNews.R
 a8fc04c4e79ffe7acb30b0636064a13a *R/zzz.R
-ff2c26c3354f623a54610081d773155b *inst/NEWS
-576aaa4a9afb1b8985f157e689333916 *man/categories.Rd
-d724d8237b29473dc954030f3f344983 *man/dummy.Rd
-b7245b4603ce732dcdef886bbe39b613 *man/dummyNews.Rd
+0126ab268d28287ac9325b77f99bf73b *inst/NEWS
+4b648acf0df1bc4a480e5e247c0741e9 *man/categories.Rd
+cc2c56d0dfedc78da28c18bb29f72148 *man/dummy.Rd
+91c1cbfeec07d9f3f431cf215a7804e0 *man/dummyNews.Rd

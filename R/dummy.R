@@ -6,6 +6,7 @@
 #' @param p Only relevant if object is NULL. Select the top p values in terms of frequency. Either "all" (all categories in all variables), an integer scalar (top p categories in all variables), or a vector of integers (number of top categories per variable in order of appearance).
 #' @param object output of the \code{categories} function. This parameter is to be used when dummies should be created only of categories present in another data set (e.g., training set)
 #' @param int should the dummies be integers (TRUE) or factors (FALSE)
+#' @param verbose logical. Used to show progress
 #' @examples
 #' #create toy data
 #' (traindata <- data.frame(var1=as.factor(c("a","b","b","c")),
@@ -47,11 +48,14 @@
 #' @seealso \code{\link{categories}}
 #' @return  A data frame containing dummy variables
 #' @author Authors: Michel Ballings, and Dirk Van den Poel, Maintainer: \email{Michel.Ballings@@GMail.com}
-dummy <- function(x,p="all", object=NULL,int=FALSE){
+dummy <- function(x,p="all", object=NULL,int=FALSE,verbose=FALSE){
+  colnames(x) <- make.names(colnames(x),TRUE)
   if(is.null(object)) object <- categories(x,p=p)
   ans <- list()
   #for each variable
-  for (i in 1:length(object)){
+  len <- length(object)
+  for (i in 1:len){
+    if (verbose) cat(round((i*100)/len,0),"% of variables processed \n")
     #for each value an ifelse
     ans[[i]] <- data.frame(sapply(object[[i]], function(z) {
       if (int==FALSE) {
@@ -62,7 +66,8 @@ dummy <- function(x,p="all", object=NULL,int=FALSE){
       z}
     )                    
     )
-    colnames(ans[[i]]) <- paste(names(object)[i],object[[i]],sep="_")
+    colnames(ans[[i]]) <- make.names(paste(names(object)[i],object[[i]],sep="_"),TRUE)
+    
   }
   do.call(cbind,ans)
 }
